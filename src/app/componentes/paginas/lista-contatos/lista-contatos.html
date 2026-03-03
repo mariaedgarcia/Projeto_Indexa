@@ -1,0 +1,28 @@
+<app-conteiner>
+  <app-cabecalho></app-cabecalho>
+
+  <!-- Two-Way Data Binding -->
+  <input 
+      type="search" 
+      [(ngModel)]="filtroPorTexto"
+      placeholder="Digite para buscar o contato">
+
+  <section class="adicionar-contato">
+    <button routerLink="/formulario">
+      <img src="assets/plus.png" alt="Adicionar contato">
+      <span>adicionar Contato</span>
+    </button>
+  </section>
+  
+  @for(letra of alfabeto; track $index){
+    <app-separador>
+      {{letra}}
+    </app-separador>
+    @for(contato of filtrarContatosPorLetraInicial(letra); track contato.id){
+      <app-contato 
+      [nome]="contato.nome" 
+      [telefone]="contato.telefone"
+      [id]="contato.id"></app-contato>
+    }
+  }
+</app-conteiner>

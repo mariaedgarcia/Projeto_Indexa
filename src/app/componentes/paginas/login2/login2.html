@@ -1,0 +1,62 @@
+<app-conteiner>
+    <header>
+<section class="cabecalho-link">
+<img src="assets/logo.png" alt="logo">
+</section>
+<section class="cabecalho-contato">
+<img src="assets/perfil-contato.png" alt="perfil">
+</section>
+<h1>Acessar Conta</h1>
+</header>
+ 
+<app-separador></app-separador>
+   
+<section class="login-card">
+<form class="loginForm" [formGroup]="loginForm" (ngSubmit)="login()">
+ 
+<!-- Email -->
+<label for="Email"> 📧 Email</label>
+<div class="field">
+<span class="field-icon" aria-hidden="true">📧</span>
+<input type="email" id="email" formControlName="email" placeholder="Email">
+</div>
+ 
+@if(loginForm.get('email')?.errors?.['required'] && loginForm.get('email')?.touched){
+    <div class="mensagem-erro">Campo obrigatorio</div>
+}
+ 
+@if(loginForm.get('email')?.errors?.['email'] && loginForm.get('email')?.touched){
+    <div class="mensagem-erro">Formato de Email inválido</div>
+}
+ 
+<!-- Senha-->
+<label for="senha">🔒 senha</label>
+<div class="field">
+<span class="field-icon" aria-hidden="true">🔒</span>
+<input [type]="showPassword ? 'text' : 'password'" id="senha" formControlName="senha" placeholder="Senha">
+<!-- Botao -->
+<button (click)="showPassword = !showPassword" type="button" class="field-action" aria-label="Mostrar/ocultar senha">👁️‍🗨</button>
+</div>
+ 
+@if(loginForm.get('senha')?.errors?.['required'] && loginForm.get('senha')?.touched){
+    <div class="mensagem-erro">Campo obrigatorio</div>
+}
+ 
+ 
+<!-- Lembrar-me -->
+<label class="remember">
+<input type="checkbox" formControlName="remember">
+<span>Lembrar-me</span>
+</label>
+ 
+<!--botao login -->
+<section class="botoes">
+<button class="btn-primary" type="submit" [disabled]="loginForm.invalid">Entrar</button>
+</section>
+ 
+ 
+<!-- esqueci a senha -->
+<a class="forgot" href="#">Esqueci minha senha</a>
+</form>
+</section>
+</app-conteiner>

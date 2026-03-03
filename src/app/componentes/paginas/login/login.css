@@ -1,0 +1,152 @@
+.conteiner {
+    border-radius: 16px;
+    background-color: #F8F9FA;
+    box-shadow: 0px 8px 16px rgba(61, 139, 253, 0.15);
+    width: 420px;
+    padding: 40px;
+    box-sizing: border-box;
+    text-align: center;
+}
+ 
+header .cabecalho-link {
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+ 
+header .cabecalho-link img {
+align-self: center;
+margin-bottom: 56px;
+}
+ 
+header .cabecalho-link div {
+display: flex;
+align-self: flex-start;
+}
+ 
+header .cabecalho-link img.seta {
+margin: 0 8px;
+}
+ 
+header .cabecalho-link a {
+text-decoration: none;
+font-family: 'Montserrat';
+font-size: 18px;
+font-weight: 400;
+line-height: 27px;
+letter-spacing: 0px;
+color: #0D6EFD;
+}
+ 
+header .cabecalho-login {
+display: flex;
+flex-direction: column;
+align-items: center;
+margin-top: 32px;
+}
+ 
+h1 {
+    font-family: 'Montserrat';
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 39px;
+    letter-spacing: 0px;
+    text-align: center;
+    color: #0D6EFD;
+    margin: 12px 0;
+}
+ 
+label {
+    display: block;
+    text-align: left;
+    margin-top: 16px;
+    font-family: 'Montserrat';
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 10px;
+    font-size: 14px;
+    color: #0D6EFD;
+}
+ 
+input {
+    width: 100%;
+    height: 40px;
+    border-radius: 8px;
+    border: 1px solid #CED4DA;
+    padding: 8px;
+    margin-top: 6px;
+    box-sizing: border-box;
+    font-family: 'Montserrat';
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 10px;
+}
+ 
+.botao-entrar {
+    margin-top: 24px;
+    width: 100%;
+    height: 44px;
+    background-color: #0D6EFD;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Montserrat';
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 23px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+ 
+.botao-entrar:hover {
+    background-color: #0b5ed7;
+}
+
+p {
+    color: #0D6EFD;
+    font-family: 'Montserrat';
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 23px;
+}
+
+/* esconde o checkbox padrão */
+.checkbox-lembrar {
+  display: none;
+}
+
+/* container visual */
+.label-lembrar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  font-size: 14px;
+  color: #495057;
+  cursor: pointer;
+}
+
+/* quadradinho */
+.label-lembrar::before {
+  content: "";
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  border: 1.5px solid #0D6EFD;
+  background-color: #fff;
+  display: inline-block;
+}
+
+/* quando marcado */
+.checkbox-lembrar:checked + .label-lembrar::before {
+  background-color: #0D6EFD;
+  background-image: url("data:image/svg+xml,%3Csvg width='12' height='10' viewBox='0 0 12 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 5L4.5 8.5L11 1.5' stroke='white' stroke-width='2'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.mensagem-erro {
+font-size: 16px;
+color: red;
+margin-bottom: 12px;
+}

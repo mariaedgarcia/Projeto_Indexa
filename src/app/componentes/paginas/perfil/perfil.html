@@ -1,0 +1,68 @@
+<app-conteiner>
+  <header>
+ 
+    <section class="cabecalho-link">
+      <img src="assets/logo.png" alt="">
+    </section>
+ 
+    <section class="voltar">
+      <button routerLink="/lista-contatos">
+        <img src="/assets/arrow-left.png" alt="">
+        <span>Voltar</span>
+      </button>
+    </section>
+ 
+    <section class="cabecalho-perfil">
+      <img src="/assets/perfil-contato.png" alt="">
+    </section>
+ 
+    <h1>Perfil do contato</h1>
+ 
+    <app-separador></app-separador>
+ 
+  </header>
+ 
+ 
+  <section class="card-perfil">
+ 
+    <div class="perfil-topo">
+      <img [src]="contato.foto" alt="Foto do contato">
+ 
+      <h2>{{ contato.nome }}</h2>
+    </div>
+ 
+    <app-separador></app-separador>
+ 
+    <div class="info">
+ 
+      <div class="info-item">
+        <strong>Número</strong>
+        <p>{{ contato.numero }}</p>
+      </div>
+ 
+      <div class="info-item">
+        <strong>Email</strong>
+        <p>{{ contato.email }}</p>
+      </div>
+ 
+      <div class="info-item">
+        <strong>Data de nascimento</strong>
+        <p>{{ contato.nascimento }}</p>
+      </div>
+ 
+      <div class="info-item">
+        <strong>Redes sociais</strong>
+        <p>{{ contato.linkedin }}</p>
+        <p>{{ contato.instagram }}</p>
+      </div>
+ 
+    </div>
+ 
+    <div class="botoes">
+      <button class="botao-excluir">Excluir contato</button>
+      <button class="botao-editar">Editar</button>
+    </div>
+ 
+  </section>
+ 
+</app-conteiner>

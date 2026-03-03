@@ -1,0 +1,40 @@
+<app-conteiner>
+    <header>
+        <section class="cabecalho-link">
+            <img src="assets/logo.png" alt="logo">
+        </section>
+        <section class="cabecalho-login">
+            <img src="assets/perfil-contato.png" alt="adicionar-contato">
+        </section>
+        <h1>Acessar Conta</h1>
+    </header>
+    <app-separador></app-separador>
+    <br>
+    <section class="conteiner">
+        <form [formGroup]="loginForm" (ngSubmit)="entrar()">
+            <label for="email">📧Email</label>
+            <input type="email" id="email" formControlName="email" placeholder="Email">
+            @if(loginForm.get('email')?.errors?.['required'] && loginForm.get('email')?.touched){
+            <div class="mensagem-erro">Campo Obrigatório</div>
+            }
+            @if(loginForm.get('email')?.errors?.['email'] && loginForm.get('email')?.touched){
+            <div class="mensagem-erro">Formato de Email Inválido!</div>
+            }
+
+            <label for="senha">Senha</label>
+            <input type="password" id="senha" formControlName="senha" placeholder="Senha">
+            @if (loginForm.get('senha')?.errors?.['required'] && loginForm.get('senha')?.touched) {
+            <div class="mensagem-erro">Campo Obrigatório</div>
+            }
+            @if (loginForm.get('senha')?.errors?.['minlength'] && loginForm.get('senha')?.touched) {
+            <div class="mensagem-erro">A senha deve ter no mínimo 6 caracteres</div>
+            }
+
+            <input type="checkbox" id="lembrar-me" class="checkbox-lembrar">
+            <label for="lembrar-me" class="label-lembrar">Lembrar-me</label>
+            <button type="button" class="botao-entrar">Entrar</button>
+            <br><br>
+            <p>Esqueci minha senha</p>
+        </form>
+    </section>
+</app-conteiner>
